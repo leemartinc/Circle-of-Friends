@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Entering captcha</title>
+</head>
+<body>
+    <script src="/__/firebase/6.3.3/firebase-app.js"></script>
+    <script src="/__/firebase/6.3.3/firebase-auth.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script>
+        function getToken(phoneNumber) {
+            var container = document.createElement('div');
+            container.id = 'captcha';
+            document.body.appendChild(container);
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('captcha', {
+                'size': 'normal',
+                'callback': function(response) {
+                    var appVerifier = window.recaptchaVerifier;
+                    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+                        .then(function (confirmationResult) {
+                            window.ReactNativeWebView.postMessage(confirmationResult.verificationId);
+                        }).catch(function (error) {
+                            window.ReactNativeWebView.postMessage('ErrorSmsCode');
+                        });
+                }
+            });
+
+            window.recaptchaVerifier.render().then(function() {
+                window.recaptchaVerifier.verify();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            window.ReactNativeWebView.postMessage('DOMLoaded');
+        });
+
+    </script>
+</body>
+</html>

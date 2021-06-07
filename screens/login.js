@@ -112,7 +112,7 @@ export default class login extends Component{
                 <KeyboardAvoidingView behavior={'position'}>
                     <View style={styles.logoContainer}>
                         <Image source={logo} style={styles.logo}/>
-                        <Text style={styles.logoText}>Friend Sync</Text>
+                        <Text style={styles.logoText}>Circle of Friends</Text>
                     </View>
                     <View style={styles.usernameView}>
                         <Ionicons name={'ios-person'} size={28} color={'rgba(255,255,255,0.7)'} style={styles.inputIcon} />

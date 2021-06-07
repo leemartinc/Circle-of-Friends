@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "friendsync",
-    "slug": "friendsync",
+    "name": "Circle of Friends",
+    "slug": "circle-of-friends",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -21,6 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/leemartinc/Circle-of-Friends"
   }
 }

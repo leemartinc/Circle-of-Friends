@@ -23,9 +23,6 @@ import {
 } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 
-import Icon from "../../node_modules/react-native-vector-icons/Ionicons";
-import MaterialCommunityIcons from "../../navigation/MainTabNavigator";
-
 import firebase from '@firebase/app';
 import '@firebase/auth';
 import '@firebase/firestore';

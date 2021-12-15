@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import * as EmailValidator from 'email-validator';
-import {Linking} from 'expo';
+import * as Linking from 'expo-linking';
 import * as WebBrowser from 'expo-web-browser';
 
 //import SmsRetriever from 'react-native-sms-retriever';
@@ -53,7 +53,7 @@ let uid = '';
 let internalPhoneNumber = '';
 let verified = false;
 
-const captchaUrl = `https://workers-ef768.firebaseapp.com/captcha.html?appurl=${Linking.makeUrl('')}`
+const captchaUrl = `https://workers-ef768.firebaseapp.com/captcha.html?appurl=${Linking.createURL('')}`
 
 
 export default class signUp extends Component{
